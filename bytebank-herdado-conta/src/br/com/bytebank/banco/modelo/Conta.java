@@ -10,8 +10,6 @@
 
 package br.com.bytebank.banco.modelo;
 
-
-// sempre acima membros publicos
 /**
  * Classe representa a moldura de uma conta
  *
@@ -20,34 +18,29 @@ package br.com.bytebank.banco.modelo;
  *
  */
 
-public abstract class Conta { // visivel em qquer lugar, dentro e fora do pacote
+public abstract class Conta {
 
-    protected double saldo; // é visivel dentro do pacote e publico para os filhos
-    // <<package private>> só visivel dentro pacote OU DEFAULT (padrao)
-    private int agencia; // visivel apenas dentro da classe
+    protected double saldo;
+    private int agencia;
     private int numero;
     private Cliente titular;
     private static int total = 0;
 
-    // em cima do construtor publico
     /**
      * Construtor para inicializar o objeto Conta a partir da agencia e numero
      * @param agencia
      * @param numero
      */
-    
+
     public Conta(int agencia, int numero){
         Conta.total++;
-        //System.out.println("O total de contas é " + Conta.total);
         this.agencia = agencia;
         this.numero = numero;
-        //this.saldo = 100;
-        //System.out.println("Estou criando uma conta " + this.numero);
+
     }
 
     public abstract void deposita(double valor);
 
-    // em cima do metodo
     /**
      *Valor precisa ser maior do que saldo
      *
@@ -56,12 +49,12 @@ public abstract class Conta { // visivel em qquer lugar, dentro e fora do pacote
      */
 
     public void saca(double valor) throws SaldoInsuficienteException{
-    	
+
         if(this.saldo < valor) {
             throw new SaldoInsuficienteException("Saldo: " + this.saldo + ", Valor: " + valor);
-        } 
-        
-        this.saldo -= valor;       
+        }
+
+        this.saldo -= valor;
     }
 
     public void transfere(double valor, Conta destino) throws SaldoInsuficienteException{
@@ -90,11 +83,11 @@ public abstract class Conta { // visivel em qquer lugar, dentro e fora do pacote
     }
 
     public void setAgencia(int agencia){
-       if(agencia <= 0) {
-           System.out.println("Nao pode valor menor igual a 0");
-           return;
-       }
-       this.agencia = agencia;
+        if(agencia <= 0) {
+            System.out.println("Nao pode valor menor igual a 0");
+            return;
+        }
+        this.agencia = agencia;
     }
 
     public void setTitular(Cliente titular){
@@ -109,7 +102,6 @@ public abstract class Conta { // visivel em qquer lugar, dentro e fora do pacote
         return Conta.total;
     }
 
-    // reaproveitar codigo toString() para utilizar em ambas contas, corrente e poupanca.
     @Override
     public String toString() {
         return " Numero: " + this.numero + ", Agencia: " + this.agencia;
