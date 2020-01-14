@@ -10,8 +10,7 @@ public class TesteArrayReferencias {
 
     public static void main(String[] args) {
 
-        // Simplificar codigo apenas com o TIPO Conta
-        // antes é preciso importar Conta
+        // array + generico == Object[] para guardar todos os tipos: Conta Cliente Agencia etc
         Conta[] contas = new Conta[5];
 
         ContaCorrente cc1 = new ContaCorrente(22, 11); // objeto criado E referencia pronta.
@@ -35,6 +34,10 @@ public class TesteArrayReferencias {
         // ContaPoupanca ref = conta[1]; // para este exemplo funfar eu preciso fazer 1 cast
         // CAST de referencia (Type cast) === transformo de uma referencia do tipo mais gererico para um tipo mais especifico
         ContaPoupanca ref = (ContaPoupanca) contas[1]; // IMPOE ao computador que ele compile desta forma
+
+        // erro: excecao class cast exception
+        ContaCorrente ref = (ContaCorrente) contas[1]; //type cast
+
         System.out.println(ref.getNumero());
     }
 }
