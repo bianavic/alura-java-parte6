@@ -11,10 +11,9 @@ public class TesteArrayReferencias {
     public static void main(String[] args) {
 
         // Simplificar codigo apenas com o TIPO Conta
-        // mas é preciso importar Conta
+        // antes é preciso importar Conta
         Conta[] contas = new Conta[5];
 
-        // array + generico == Object[] para guardar todos os tipos: Conta Cliente Agencia etc
         ContaCorrente cc1 = new ContaCorrente(22, 11); // objeto criado E referencia pronta.
         contas[0] = cc1;
 
