@@ -17,9 +17,5 @@ public class TesteArrayString {
 
         System.out.println("Funcionou!!");
 
-        // array string args (alterar configuracoes no intellj
-//        for (int i = 0; i < args.length; i++);
-//        System.out.println(args[0]);
-
     }
 }
