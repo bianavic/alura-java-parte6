@@ -1,6 +1,5 @@
 package br.com.bytebank.banco.modelo;
 
-
 // transformar o GuardadorDeContas em um guardador de REFERENCIAS GENERICA
 
 public class GuardadorDeReferencias {
