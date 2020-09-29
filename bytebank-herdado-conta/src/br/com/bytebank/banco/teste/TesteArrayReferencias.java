@@ -3,7 +3,6 @@
 package br.com.bytebank.banco.teste;
 
 import br.com.bytebank.banco.modelo.*;
-import sun.lwawt.macosx.*;
 
 public class TesteArrayReferencias {
 

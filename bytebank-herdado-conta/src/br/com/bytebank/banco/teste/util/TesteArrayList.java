@@ -4,7 +4,7 @@ import br.com.bytebank.banco.modelo.*;
 
 import java.util.*;
 
-public class Teste {
+public class TesteArrayList {
 
     public static void main(String[] args) {
 
