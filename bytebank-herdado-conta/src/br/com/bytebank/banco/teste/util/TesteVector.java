@@ -5,15 +5,17 @@ import br.com.bytebank.banco.modelo.ContaCorrente;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Vector;
 
-public class TesteLinkedList {
+public class TesteVector {
 
     public static void main(String[] args) {
 
-        // as 3 opçoes abaixo funcionam | List é interface | ArrayList e LinkedList são implementacoes
-//        LinkedList<Conta> lista = new LinkedList<Conta>();
-//        List<Conta> lista = new LinkedList<Conta>();
-        List<Conta> lista = new ArrayList<Conta>();
+        // Generics
+        // as 3 opçoes abaixo funcionam | List é interface | ArrayList e LinkedList são implementacoes | Vector caso precise trabalhar outras pilhas
+        // LinkedList<Conta> lista = new LinkedList<Conta>();
+        // List<Conta> lista = new LinkedList<Conta>();
+        List<Conta> lista = new Vector<Conta>(); // thread safe
 
         Conta cc = new ContaCorrente(22, 11);
         lista.add(cc);
